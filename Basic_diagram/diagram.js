@@ -9,6 +9,19 @@ $(document).ready(function(){
 		animateDiagram();
 
 	}
+
+	$('.diagram_container #diagram_group #diamgram_rect').mouseover(function(){
+
+		$defaultWidth = $(this).width();
+		$(this).css({position: 'relative', zIndex: 10});
+		$(this).animate({width: $defaultWidth * 1.2, left: -7});
+	});
+	$('.diagram_container #diagram_group #diamgram_rect').mouseleave(function(){
+
+		$(this).css({position: 'relative'});
+		$(this).animate({width: $defaultWidth, left: 0, zIndex: 0});
+
+	});
 });
 
 function updateSize(){
